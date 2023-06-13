@@ -2,7 +2,7 @@ import Container from "./style";
 
 import menu from "../../assets/images/icons/menuMobile.svg";
 import xCirclePrimary from "../../assets/images/icons/xCirclePrimary.svg";
-import ofcLogo from "../../assets/images/ofcLogo.jpg";
+import ofc from "../../assets/images/ofc.png";
 
 export default function Nav() {
   function menuShow() {
@@ -26,7 +26,7 @@ export default function Nav() {
     <Container>
       <nav className="nav-bar">
         <div className="logo">
-          <img src={ofcLogo} alt="Bakoads" />
+          <img src={ofc} alt="Oficina de bordados" />
         </div>
 
         <div className="nav-list">

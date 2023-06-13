@@ -8,6 +8,10 @@ const Container = styled.header`
     background: var(--secondary);
     box-shadow: 0px 0px 4px 10px rgba(0, 0, 0, 0.04);
     padding: 1.5rem 6rem;
+
+    img {
+      height: 5rem;
+    }
   }
 
   .nav-list {
