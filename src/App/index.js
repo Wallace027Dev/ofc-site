@@ -1,5 +1,11 @@
-import Home from "../pages/Home";
+import Slider from "../components/Slider";
+import Nav from "../components/Nav";
 
 export default function App() {
-  return <Home />;
+  return (
+    <>
+      <Nav />
+      <Slider />
+    </>
+  );
 }
