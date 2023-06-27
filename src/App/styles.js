@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
+export const Header = styled.header``;
+
 const Main = styled.main`
+  padding: 0 10%;
+
+  div + div,
+  & {
+    margin-top: 3rem;
+  }
+
   h1 {
     font-size: 2.8rem;
   }
