@@ -27,6 +27,10 @@ const Main = styled.main`
   p {
     font-size: 1.2rem;
   }
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export default Main;

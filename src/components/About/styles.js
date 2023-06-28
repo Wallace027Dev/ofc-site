@@ -17,6 +17,14 @@ const Container = styled.div`
       height: 24rem;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    .about {
+      max-width: 100%;
+    }
+  }
 `;
 
 export default Container;

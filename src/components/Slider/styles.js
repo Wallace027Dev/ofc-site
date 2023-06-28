@@ -9,6 +9,12 @@ const Container = styled.div`
     height: 50rem;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 768px) {
+    img {
+      height: 25rem;
+    }
+  }
 `;
 
 export default Container;

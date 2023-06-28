@@ -32,6 +32,13 @@ const Container = styled.footer`
     padding: 0.5rem;
     border-radius: 0.25rem;
   }
+
+  @media screen and (max-width: 768px) {
+    h3,
+    h4 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export default Container;
