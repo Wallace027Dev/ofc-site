@@ -19,7 +19,8 @@ const Main = styled.main`
     font-size: 2.4rem;
   }
 
-  h3 {
+  h3,
+  a {
     font-size: 1.6rem;
   }
 

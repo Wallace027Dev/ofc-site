@@ -8,9 +8,9 @@ export default function Contacts() {
       <h1>Entre em contato conosco!</h1>
       <div className="contact">
         <h2>Instagram</h2>
-        <a href="https://instagram.com">
-          <img src={instagram} alt="Instagram Icon" />
-          <h3>@OfcBordados</h3>
+        <img src={instagram} alt="Instagram Icon" />
+        <a className="btn-instagram" href="https://instagram.com">
+          @OfcBordados
         </a>
       </div>
     </Container>

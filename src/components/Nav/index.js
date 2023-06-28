@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <Container>
-      <nav className="nav-bar">
+      <nav id="header" className="nav-bar">
         <div className="logo">
           <img src={ofc} alt="Oficina de bordados" />
         </div>

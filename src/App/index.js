@@ -5,6 +5,7 @@ import Main, { Header } from "./styles";
 import Experience from "../components/Experience";
 import Works from "../components/Works";
 import Contacts from "../components/Contacts";
+import Footer from "../components/Footer";
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
         <Works />
         <Contacts />
       </Main>
+
+      <Footer />
     </>
   );
 }
