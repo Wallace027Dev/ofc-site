@@ -12,6 +12,7 @@ const Main = styled.main`
 
   h1 {
     font-size: 2.8rem;
+    margin-bottom: 1.6rem;
   }
 
   h2 {

@@ -12,8 +12,9 @@ module.exports = {
     quotes: "off",
     "linebreak-style": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": "off",
+    "react/no-array-index-key": "off",
     "react/no-unescaped-entities": "off",
+    "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
   },
 };

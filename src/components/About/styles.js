@@ -9,11 +9,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    max-width: 40%;
-
-    h1 {
-      margin-bottom: 2.4rem;
-    }
+    max-width: 50%;
   }
 
   .logo-ofc {
