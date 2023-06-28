@@ -31,7 +31,9 @@ export default function Works() {
         </div>
         {!showAll && (
           // eslint-disable-next-line react/jsx-no-bind
-          <ShowMoreButton onClick={handleClick}>Mostrar mais</ShowMoreButton>
+          <ShowMoreButton onClick={handleClick}>
+            <h3>Mostrar mais</h3>
+          </ShowMoreButton>
         )}
       </CompanyWorks>
     </Container>

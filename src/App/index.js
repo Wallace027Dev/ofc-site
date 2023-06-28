@@ -4,6 +4,7 @@ import About from "../components/About";
 import Main, { Header } from "./styles";
 import Experience from "../components/Experience";
 import Works from "../components/Works";
+import Contacts from "../components/Contacts";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <About />
         <Experience />
         <Works />
+        <Contacts />
       </Main>
     </>
   );
