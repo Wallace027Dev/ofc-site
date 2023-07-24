@@ -18,8 +18,9 @@ export const CompanyWorks = styled.div`
 export const Image = styled.img`
   width: 20rem;
   height: 20rem;
-  object-fit: cover;
   margin: 2rem;
+  border-radius: 10rem;
+  object-fit: cover;
 `;
 
 export const ShowMoreButton = styled.button`

@@ -3,12 +3,13 @@ import { useState } from "react";
 import Container, { CompanyWorks, Image, ShowMoreButton } from "./styles";
 
 import imageNotFound from "../../assets/images/ofc.png";
+import project1 from "../../assets/images/catalog/project.jpg";
 
 export default function Works() {
   const [showAll, setShowAll] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [images, setImages] = useState([
-    imageNotFound,
+    project1,
     imageNotFound,
     imageNotFound,
     imageNotFound,
