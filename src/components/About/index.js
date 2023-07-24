@@ -8,15 +8,18 @@ export default function About() {
       <div className="about">
         <h1>Sobre a Oficina de Bordados</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          Somos uma empresa líder em bordados industriais há 27 anos,
+          comprometida em fornecer soluções de alta qualidade e precisão para a
+          indústria têxtil. Com uma equipe experiente e equipamentos de última
+          geração, estamos preparados para atender às demandas mais complexas e
+          personalizadas de nossos clientes. Nossa paixão pelo bordado
+          tradicional se combina com a inovação tecnológica para entregar
+          resultados excepcionais em grande escala. Orgulhamo-nos da nossa
+          dedicação à excelência, pontualidade e atendimento ao cliente,
+          oferecendo um serviço confiável e de alto padrão. Seja qual for o seu
+          projeto, estamos prontos para torná-lo realidade com a beleza e a
+          perfeição do bordado industrial. Sejam bem-vindos a Oficina de
+          bordados!
         </p>
       </div>
       <div className="logo-ofc">
