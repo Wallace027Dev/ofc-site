@@ -9,8 +9,8 @@ import patchNome from "../../assets/images/catalog/patch-nome/photo.jpeg";
 import prefLinhares from "../../assets/images/catalog/pref-linhares/photo.jpeg";
 import prefVitoria from "../../assets/images/catalog/pref-vitoria/photo.jpeg";
 import cavaloJeans from "../../assets/images/catalog/cavalo-jeans/photo.jpeg";
-import coelhoBorboleta from "../../assets/images/catalog/coelho-borboleta/photo.jpeg";
 import florEfeito from "../../assets/images/catalog/flor-efeito/photo.jpeg";
+import coelhoRealista from "../../assets/images/catalog/coelho-realista/photo.jpeg";
 import rechilieu from "../../assets/images/catalog/rechilieu/photo.jpeg";
 
 export default function Works() {
@@ -24,9 +24,9 @@ export default function Works() {
     brasaoEs,
     merengue,
     prefLinhares,
-    coelhoBorboleta,
     florEfeito,
     rechilieu,
+    coelhoRealista,
   ]);
 
   function handleClick() {

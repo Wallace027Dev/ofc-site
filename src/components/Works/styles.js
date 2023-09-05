@@ -16,11 +16,16 @@ export const CompanyWorks = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 20rem;
-  height: 20rem;
+  width: 24rem;
+  height: 24rem;
   margin: 2rem;
-  border-radius: 10rem;
+  border-radius: 0.5rem;
   object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    width: 16rem;
+    height: 16rem;
+  }
 `;
 
 export const ShowMoreButton = styled.button`
