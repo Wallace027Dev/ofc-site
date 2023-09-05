@@ -62,11 +62,6 @@ export default function Nav() {
         <ul>
           <li className="nav-item">
             <a href="#oi" className="nav-link">
-              INÍCIO
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#oi" className="nav-link">
               QUEM SOMOS
             </a>
           </li>
