@@ -10,6 +10,10 @@ const Container = styled.div`
     align-items: left;
     justify-content: center;
     max-width: 50%;
+
+    p {
+      font-size: 1.6rem;
+    }
   }
 
   .logo-ofc {

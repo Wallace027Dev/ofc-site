@@ -32,22 +32,17 @@ export default function Nav() {
         <div className="nav-list">
           <ul>
             <li className="nav-item">
-              <a href="./dashboard" className="nav-link">
-                INÍCIO
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="./payment" className="nav-link">
+              <a href="#about" className="nav-link">
                 QUEM SOMOS
               </a>
             </li>
             <li className="nav-item">
-              <a href="./dashboard" className="nav-link">
+              <a href="#works" className="nav-link">
                 CATÁLOGO
               </a>
             </li>
             <li className="nav-item">
-              <a href="./payment" className="nav-link">
+              <a href="#contact" className="nav-link">
                 CONTATO
               </a>
             </li>
