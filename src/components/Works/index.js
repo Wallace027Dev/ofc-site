@@ -34,7 +34,7 @@ export default function Works() {
   }
 
   return (
-    <Container>
+    <Container id="works">
       <h1>Nossos trabalhos</h1>
       <CompanyWorks>
         <div className="work-images">

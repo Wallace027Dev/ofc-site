@@ -4,9 +4,9 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import Container from "./styles";
 
-import images1 from "../../assets/images/images1.jpg";
-import images2 from "../../assets/images/images2.jpg";
-import images3 from "../../assets/images/images3.jpg";
+import images1 from "../../assets/images/image1.jpeg";
+import images2 from "../../assets/images/image2.jpeg";
+import images3 from "../../assets/images/image3.jpeg";
 
 export default function Slider() {
   return (

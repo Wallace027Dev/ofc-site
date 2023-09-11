@@ -1,11 +1,12 @@
 import Container from "./styles";
 
 import ofcLogo from "../../assets/images/ofc.png";
+/* import radagasioTrabalhando from "../../assets/videos/radagasio-trabalhando.mp4"; */
 
 export default function About() {
   return (
     <Container>
-      <div className="about">
+      <div className="about" id="about">
         <h1>Sobre a Oficina de Bordados</h1>
         <p>
           Somos uma empresa líder em bordados industriais há 27 anos,
@@ -22,6 +23,10 @@ export default function About() {
           bordados!
         </p>
       </div>
+      {/* <video autoPlay>
+        <source src={radagasioTrabalhando} type="video/mp4" />
+        Seu navegador não suporta o elemento de vídeo.
+      </video> */}
       <div className="logo-ofc">
         <img src={ofcLogo} alt="Logo from Oficina de Bordados" />
       </div>

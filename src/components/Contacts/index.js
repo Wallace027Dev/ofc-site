@@ -4,7 +4,7 @@ import instagram from "../../assets/images/icons/instagram.svg";
 
 export default function Contacts() {
   return (
-    <Container>
+    <Container id="contacts">
       <h1>Entre em contato conosco!</h1>
       <div className="contact">
         <h2>Instagram</h2>

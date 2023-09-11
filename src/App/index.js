@@ -15,9 +15,9 @@ export default function App() {
       </Header>
 
       <Main>
-        <About id="about" />
-        <Works id="works" />
-        <Contacts id="contacts" />
+        <About />
+        <Works />
+        <Contacts />
       </Main>
 
       <Footer />

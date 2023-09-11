@@ -42,7 +42,7 @@ export default function Nav() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">
+              <a href="#contacts" className="nav-link">
                 CONTATO
               </a>
             </li>
@@ -61,17 +61,17 @@ export default function Nav() {
       <div className="mobile-menu nav-list">
         <ul>
           <li className="nav-item">
-            <a href="#oi" className="nav-link">
+            <a href="#about" className="nav-link">
               QUEM SOMOS
             </a>
           </li>
           <li className="nav-item">
-            <a href="#oi" className="nav-link">
+            <a href="#works" className="nav-link">
               CATÁLOGO
             </a>
           </li>
           <li className="nav-item">
-            <a href="#oi" className="nav-link">
+            <a href="#contacts" className="nav-link">
               CONTATO
             </a>
           </li>
