@@ -4,9 +4,10 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import Container from "./styles";
 
-import images1 from "../../assets/images/image1.jpeg";
-import images2 from "../../assets/images/image2.jpeg";
-import images3 from "../../assets/images/image3.jpeg";
+import bordado1 from "../../assets/images/experience/bordado1.jpeg";
+import bordado2 from "../../assets/images/experience/bordado2.jpeg";
+import bordado3 from "../../assets/images/experience/bordado3.jpeg";
+import bordado4 from "../../assets/images/experience/bordado4.jpeg";
 
 export default function Slider() {
   return (
@@ -20,13 +21,16 @@ export default function Slider() {
         }}
       >
         <SplideSlide>
-          <img src={images1} alt="Slide 1" />
+          <img src={bordado1} alt="Slide 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={images2} alt="Slide 2" />
+          <img src={bordado2} alt="Slide 2" />
         </SplideSlide>
         <SplideSlide>
-          <img src={images3} alt="Slide 3" />
+          <img src={bordado3} alt="Slide 3" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src={bordado4} alt="Slide 4" />
         </SplideSlide>
       </Splide>
     </Container>
