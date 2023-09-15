@@ -6,7 +6,7 @@ import "@splidejs/react-splide/css";
 const Container = styled.div`
   img {
     width: 100vw;
-    height: 50rem;
+    height: 45rem;
     object-fit: cover;
   }
 

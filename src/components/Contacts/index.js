@@ -9,7 +9,10 @@ export default function Contacts() {
       <div className="contact">
         <h2>Instagram</h2>
         <img src={instagram} alt="Instagram Icon" />
-        <a className="btn-instagram" href="https://instagram.com">
+        <a
+          className="btn-instagram"
+          href="https://www.instagram.com/ofc.bordados/"
+        >
           @OfcBordados
         </a>
       </div>

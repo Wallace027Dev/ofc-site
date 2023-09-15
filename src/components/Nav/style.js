@@ -17,6 +17,7 @@ const Container = styled.header`
   .nav-list {
     display: flex;
     align-items: center;
+    margin-right: 1.5rem;
 
     ul {
       display: flex;
@@ -25,16 +26,35 @@ const Container = styled.header`
 
       .nav-item {
         margin: 0 1.5rem;
+        display: flex;
+        align-items: center;
+
+        :hover {
+          background-color: var(--primary);
+          border: 0.75rem solid var(--primary);
+          border-radius: 4rem;
+          transition: 0.4s;
+          color: var(--bg);
+          margin: 0 2rem;
+
+          .nav-link {
+            :hover {
+              color: var(--bg);
+              transition: 0.4s;
+            }
+          }
+        }
+
+        img {
+          height: 2rem;
+          margin-right: 0.5rem;
+        }
 
         .nav-link {
           color: var(--primary);
           text-decoration: none;
           font-size: 1.6rem;
           font-weight: bold;
-          :hover {
-            color: var(--bg);
-            transition: 0.4s;
-          }
         }
       }
     }

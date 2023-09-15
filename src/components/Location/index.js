@@ -6,7 +6,9 @@ export default function Location() {
   return (
     <Container>
       <h1>Onde estamos</h1>
-      <img src={location} alt="Location" />
+      <a href="https://goo.gl/maps/jLWHNUaVrdSWDj6V7">
+        <img src={location} alt="Location" />
+      </a>
     </Container>
   );
 }

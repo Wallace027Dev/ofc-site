@@ -9,6 +9,7 @@ export const CompanyWorks = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  margin-top: 4rem;
 
   .work-images {
     text-align: center;

@@ -2,6 +2,9 @@ import Container from "./style";
 
 import menu from "../../assets/images/icons/menuMobile.svg";
 import xCirclePrimary from "../../assets/images/icons/xCirclePrimary.svg";
+import home from "../../assets/images/icons/home.svg";
+import apps from "../../assets/images/icons/apps.svg";
+import phoneCall from "../../assets/images/icons/phoneCall.svg";
 import ofc from "../../assets/images/ofc.png";
 
 export default function Nav() {
@@ -32,16 +35,19 @@ export default function Nav() {
         <div className="nav-list">
           <ul>
             <li className="nav-item">
+              <img src={home} alt="home" />
               <a href="#about" className="nav-link">
                 QUEM SOMOS
               </a>
             </li>
             <li className="nav-item">
+              <img src={apps} alt="apps" />
               <a href="#works" className="nav-link">
                 CATÁLOGO
               </a>
             </li>
             <li className="nav-item">
+              <img src={phoneCall} alt="phoneCall" />
               <a href="#contacts" className="nav-link">
                 CONTATO
               </a>

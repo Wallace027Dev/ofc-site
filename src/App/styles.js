@@ -7,7 +7,7 @@ const Main = styled.main`
 
   div + div,
   & {
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
 
   h1 {

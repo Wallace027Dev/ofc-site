@@ -12,7 +12,7 @@ const Container = styled.div`
     max-width: 50%;
 
     p {
-      font-size: 1.6rem;
+      font-size: 2.2rem;
     }
   }
 
