@@ -13,6 +13,7 @@ const Container = styled.div`
 
     p {
       font-size: 2.4rem;
+      color: var(--secondary);
     }
   }
 
