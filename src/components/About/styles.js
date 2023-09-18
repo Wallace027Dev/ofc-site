@@ -12,7 +12,7 @@ const Container = styled.div`
     max-width: 50%;
 
     p {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
   }
 
@@ -27,6 +27,16 @@ const Container = styled.div`
 
     .about {
       max-width: 100%;
+
+      p {
+        font-size: 1.6rem;
+      }
+    }
+
+    .logo-ofc {
+      img {
+        height: 18rem;
+      }
     }
   }
 `;

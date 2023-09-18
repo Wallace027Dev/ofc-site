@@ -76,7 +76,12 @@ const Container = styled.header`
   @media screen and (max-width: 730px) {
     .nav-bar {
       padding: 1.5rem 4rem;
-      img {
+
+      .logo img {
+        margin-left: 2rem;
+      }
+
+      .nav-list {
         display: none;
       }
     }

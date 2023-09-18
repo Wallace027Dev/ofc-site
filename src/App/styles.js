@@ -29,7 +29,13 @@ const Main = styled.main`
   }
 
   @media screen and (max-width: 768px) {
+    padding: 0 5%;
     text-align: center;
+
+    div + div,
+    & {
+      margin-top: 3rem;
+    }
   }
 `;
 
