@@ -77,10 +77,6 @@ const Container = styled.header`
     .nav-bar {
       padding: 1.5rem 4rem;
 
-      .logo img {
-        margin-left: 2rem;
-      }
-
       .nav-list {
         display: none;
       }
@@ -120,8 +116,8 @@ const Container = styled.header`
     }
 
     .icon {
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
     }
   }
 `;
