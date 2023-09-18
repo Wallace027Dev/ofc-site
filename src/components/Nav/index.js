@@ -5,7 +5,7 @@ import xCirclePrimary from "../../assets/images/icons/xCirclePrimary.svg";
 import home from "../../assets/images/icons/home.svg";
 import apps from "../../assets/images/icons/apps.svg";
 import phoneCall from "../../assets/images/icons/phoneCall.svg";
-import ofc from "../../assets/images/ofc.png";
+import ofc from "../../assets/images/icons/ofcB.svg";
 
 export default function Nav() {
   function menuShow() {

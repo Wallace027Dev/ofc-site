@@ -17,30 +17,35 @@ const Container = styled.header`
   .nav-list {
     display: flex;
     align-items: center;
-    margin-right: 1.5rem;
+    margin-right: 1%.5;
 
     ul {
       display: flex;
       justify-content: center;
       list-style: none;
-
+      :hover {
+        color: var(--bg);
+        transition: 0.4s;
+      }
       .nav-item {
         margin: 0 1.5rem;
         display: flex;
         align-items: center;
 
-        :hover {
-          background-color: var(--primary);
-          border: 0.75rem solid var(--primary);
-          border-radius: 4rem;
-          transition: 0.4s;
-          color: var(--bg);
-          margin: 0 2rem;
+        @media (min-width: 769px) {
+          :hover {
+            background-color: var(--primary);
+            border: 0.75rem solid var(--primary);
+            border-radius: 4rem;
+            transition: 0.4s;
+            color: var(--bg);
+            margin: 0 2rem;
 
-          .nav-link {
-            :hover {
-              color: var(--bg);
-              transition: 0.4s;
+            .nav-link {
+              :hover {
+                color: var(--bg);
+                transition: 0.4s;
+              }
             }
           }
         }
@@ -71,6 +76,9 @@ const Container = styled.header`
   @media screen and (max-width: 730px) {
     .nav-bar {
       padding: 1.5rem 4rem;
+      img {
+        display: none;
+      }
     }
 
     .nav-item {

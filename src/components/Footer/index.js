@@ -1,6 +1,6 @@
 import Container from "./styles";
 
-import ofc from "../../assets/images/ofc.png";
+import ofc from "../../assets/images/icons/ofcbordados.svg";
 import arrow from "../../assets/images/icons/arrow.svg";
 
 export default function Footer() {

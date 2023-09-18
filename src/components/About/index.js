@@ -1,6 +1,6 @@
 import Container from "./styles";
 
-import ofcLogo from "../../assets/images/ofc.png";
+import ofcLogo from "../../assets/images/icons/ofcbordados.svg";
 
 export default function About() {
   return (
