@@ -8,12 +8,13 @@
 
 body {
   background: var(--bg);
-  color: var(--secondary);
+  color: var(--tertiary);
 }
 
 :root {
   --primary:#99cccc;
   --secondary: #339999;
+  --tertiary: #110454;
   --bt: #006666;
   --bg: #E9F1F0;
 }

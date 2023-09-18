@@ -23,10 +23,7 @@ const Container = styled.header`
       display: flex;
       justify-content: center;
       list-style: none;
-      :hover {
-        color: var(--bg);
-        transition: 0.4s;
-      }
+
       .nav-item {
         margin: 0 1.5rem;
         display: flex;
@@ -42,10 +39,8 @@ const Container = styled.header`
             margin: 0 2rem;
 
             .nav-link {
-              :hover {
-                color: var(--bg);
-                transition: 0.4s;
-              }
+              color: var(--bg);
+              transition: 0.4s;
             }
           }
         }
