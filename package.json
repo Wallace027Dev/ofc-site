@@ -2,6 +2,7 @@
   "name": "ofc-site",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://ofcbordados.com.br/build",
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
