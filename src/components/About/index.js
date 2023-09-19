@@ -8,7 +8,7 @@ export default function About() {
       <div className="about" id="about">
         <h1>Sobre a Oficina de Bordados</h1>
         <p>
-          Somos líderes em bordados industriais há 27 anos, oferecendo soluções
+          Somos líderes em bordados industriais desde 1996, oferecendo soluções
           de alta qualidade para a indústria têxtil. Com equipe experiente e
           tecnologia de ponta, atendemos às demandas complexas dos clientes com
           excelência. Valorizamos a pontualidade e o atendimento, proporcionando
