@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 62.5%;
 }
 
@@ -12,10 +12,20 @@ body {
 }
 
 :root {
-  --primary:#99cccc;
+  --primary: #99cccc;
   --secondary: #339999;
   --tertiary: #110454;
   --bt: #006666;
-  --bg: #E9F1F0;
+  --bg: #e9f1f0;
 }
 
+.remove-effect-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  text-decoration: underline; /* Adicione um sublinhado para torná-lo mais semelhante a um link */
+}

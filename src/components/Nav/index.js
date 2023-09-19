@@ -7,8 +7,10 @@ import apps from "../../assets/images/icons/apps.svg";
 import phoneCall from "../../assets/images/icons/phoneCall.svg";
 import ofc from "../../assets/images/icons/ofcB.svg";
 
+import scrollToSection from "../utils/scrollToSection";
+
 export default function Nav() {
-  function menuShow() {
+  const menuShow = () => {
     const menuMobile = document.querySelector(".mobile-menu");
     const icon = document.querySelector(".icon");
 
@@ -23,7 +25,7 @@ export default function Nav() {
         icon.src = xCirclePrimary;
       }
     }
-  }
+  };
 
   return (
     <Container>
@@ -36,21 +38,33 @@ export default function Nav() {
           <ul>
             <li className="nav-item">
               <img src={home} alt="home" />
-              <a href="#about" className="nav-link">
+              <button
+                type="button"
+                onClick={() => scrollToSection("about")}
+                className="nav-link remove-effect-button"
+              >
                 QUEM SOMOS
-              </a>
+              </button>
             </li>
             <li className="nav-item">
               <img src={apps} alt="apps" />
-              <a href="#works" className="nav-link">
+              <button
+                type="button"
+                onClick={() => scrollToSection("works")}
+                className="nav-link remove-effect-button"
+              >
                 CATÁLOGO
-              </a>
+              </button>
             </li>
             <li className="nav-item">
               <img src={phoneCall} alt="phoneCall" />
-              <a href="#contacts" className="nav-link">
+              <button
+                type="button"
+                onClick={() => scrollToSection("contact")}
+                className="nav-link remove-effect-button"
+              >
                 CONTATO
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -58,7 +72,11 @@ export default function Nav() {
         <div />
 
         <div className="mobile-menu-icon">
-          <button type="button" onClick={menuShow}>
+          <button
+            className="remove-effect-button"
+            type="button"
+            onClick={menuShow}
+          >
             <img className="icon" src={menu} alt="Mobile menu icon" />
           </button>
         </div>
@@ -67,19 +85,33 @@ export default function Nav() {
       <div className="mobile-menu nav-list">
         <ul>
           <li className="nav-item">
-            <a href="#about" className="nav-link">
+            <button
+              type="button"
+              onClick={() => scrollToSection("about")}
+              className="nav-link remove-effect-button"
+            >
               QUEM SOMOS
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a href="#works" className="nav-link">
+            <img src={apps} alt="apps" />
+            <button
+              type="button"
+              onClick={() => scrollToSection("works")}
+              className="nav-link remove-effect-button"
+            >
               CATÁLOGO
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a href="#contacts" className="nav-link">
+            <img src={phoneCall} alt="phoneCall" />
+            <button
+              type="button"
+              onClick={() => scrollToSection("contact")}
+              className="nav-link remove-effect-button"
+            >
               CONTATO
-            </a>
+            </button>
           </li>
         </ul>
 

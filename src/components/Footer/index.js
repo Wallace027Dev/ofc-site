@@ -3,6 +3,8 @@ import Container from "./styles";
 import ofc from "../../assets/images/icons/ofcbordados.svg";
 import arrow from "../../assets/images/icons/arrow.svg";
 
+import scrollToSection from "../utils/scrollToSection";
+
 export default function Footer() {
   return (
     <Container>
@@ -14,9 +16,13 @@ export default function Footer() {
         <h3>© 1996 Oficina de Bordados, Inc.</h3>
       </div>
       <div>
-        <a href="#header">
+        <button
+          type="button"
+          onClick={() => scrollToSection("contact")}
+          className="remove-effect-button"
+        >
           <img src={arrow} alt="botão seta para cima" />
-        </a>
+        </button>
       </div>
     </Container>
   );

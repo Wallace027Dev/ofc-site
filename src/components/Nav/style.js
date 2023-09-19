@@ -83,12 +83,6 @@ const Container = styled.header`
 
     .mobile-menu-icon {
       display: block !important;
-
-      button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
     }
 
     .mobile-menu {

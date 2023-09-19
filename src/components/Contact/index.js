@@ -3,7 +3,7 @@ import Container from "./styles";
 import instagram from "../../assets/images/icons/instagram.svg";
 import whatsapp from "../../assets/images/icons/whatsapp.svg";
 
-export default function Contacts() {
+export default function Contact() {
   const phoneNumber = "27997062775";
 
   const handleWhatsAppRedirect = () => {
@@ -12,7 +12,7 @@ export default function Contacts() {
   };
 
   return (
-    <Container id="contacts">
+    <Container id="contact">
       <h1>Entre em contato conosco!</h1>
       <div>
         <a
@@ -24,7 +24,11 @@ export default function Contacts() {
           <img src={instagram} alt="Instagram Icon" />
           @OfcBordados
         </a>
-        <button className="btn" type="button" onClick={handleWhatsAppRedirect}>
+        <button
+          className="btn remove-effect-button"
+          type="button"
+          onClick={handleWhatsAppRedirect}
+        >
           <h2>Whatsapp</h2>
           <img src={whatsapp} alt="Whatsapp Icon" />
           <p>Converse comigo!</p>

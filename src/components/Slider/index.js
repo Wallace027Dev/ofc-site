@@ -4,10 +4,10 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import Container from "./styles";
 
-import bordado1 from "../../assets/images/experience/bordado1.jpeg";
-import bordado2 from "../../assets/images/experience/bordado2.jpeg";
-import bordado3 from "../../assets/images/experience/bordado3.jpeg";
-import bordado4 from "../../assets/images/experience/bordado4.jpeg";
+import bordado1 from "../../assets/images/slider/bordado1.jpeg";
+import bordado2 from "../../assets/images/slider/bordado2.jpeg";
+import bordado3 from "../../assets/images/slider/bordado3.jpeg";
+import bordado4 from "../../assets/images/slider/bordado4.jpeg";
 
 export default function Slider() {
   return (

@@ -1,9 +1,11 @@
-import Slider from "../components/Slider";
-import Nav from "../components/Nav";
-import About from "../components/About";
 import Main, { Header } from "./styles";
+
+import Nav from "../components/Nav";
+import Slider from "../components/Slider";
+import Experience from "../components/Experience";
+import About from "../components/About";
 import Works from "../components/Works";
-import Contacts from "../components/Contacts";
+import Contact from "../components/Contact";
 import Location from "../components/Location";
 import Footer from "../components/Footer";
 
@@ -16,9 +18,10 @@ export default function App() {
       </Header>
 
       <Main>
+        <Experience />
         <About />
         <Works />
-        <Contacts />
+        <Contact />
         <Location />
       </Main>
 

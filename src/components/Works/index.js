@@ -2,31 +2,31 @@ import { useState } from "react";
 
 import Container, { CompanyWorks, Image, ShowMoreButton } from "./styles";
 
-import brasaoEs from "../../assets/images/catalog/brasao-es/photo.jpeg";
-import konykCourino from "../../assets/images/catalog/konyk-courino/photo.jpeg";
-import merengue from "../../assets/images/catalog/merengue/photo.jpeg";
-import patchNome from "../../assets/images/catalog/patch-nome/photo.jpeg";
-import prefLinhares from "../../assets/images/catalog/pref-linhares/photo.jpeg";
-import prefVitoria from "../../assets/images/catalog/pref-vitoria/photo.jpeg";
-import cavaloJeans from "../../assets/images/catalog/cavalo-jeans/photo.jpeg";
-import florEfeito from "../../assets/images/catalog/flor-efeito/photo.jpeg";
-import coelhoRealista from "../../assets/images/catalog/coelho-realista/photo.jpeg";
-import rechilieu from "../../assets/images/catalog/rechilieu/photo.jpeg";
+import bloomWithLove from "../../assets/images/catalog/bloomWithLove-min.jpeg";
+import bocaTotal from "../../assets/images/catalog/bocaTotal-min.jpeg";
+import buphallosBlusa from "../../assets/images/catalog/buphallosBlusa-min.jpeg";
+import coracaoVibraAlto from "../../assets/images/catalog/coracaoVibraAlto-min.jpeg";
+import dinamica from "../../assets/images/catalog/dinamica-min.jpeg";
+import feNaVida from "../../assets/images/catalog/feNaVida-min.jpeg";
+import floralVerde from "../../assets/images/catalog/floralVerde-min.jpeg";
+import lembRelevo from "../../assets/images/catalog/lembRelevo-min.jpeg";
+import ursoHeitor from "../../assets/images/catalog/ursoHeitor-min.jpeg";
+import variasToalhas from "../../assets/images/catalog/variasToalhas-min.jpeg";
 
 export default function Works() {
   const [showAll, setShowAll] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [images, setImages] = useState([
-    cavaloJeans,
-    prefVitoria,
-    konykCourino,
-    patchNome,
-    brasaoEs,
-    merengue,
-    prefLinhares,
-    florEfeito,
-    rechilieu,
-    coelhoRealista,
+    bloomWithLove,
+    feNaVida,
+    bocaTotal,
+    buphallosBlusa,
+    coracaoVibraAlto,
+    floralVerde,
+    dinamica,
+    lembRelevo,
+    ursoHeitor,
+    variasToalhas,
   ]);
 
   function handleClick() {
