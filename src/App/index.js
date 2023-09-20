@@ -18,9 +18,9 @@ export default function App() {
       </Header>
 
       <Main>
-        <Experience />
         <About />
         <Works />
+        <Experience />
         <Contact />
         <Location />
       </Main>

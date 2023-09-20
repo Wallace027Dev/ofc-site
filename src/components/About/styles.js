@@ -12,7 +12,7 @@ const Container = styled.div`
     max-width: 50%;
 
     p {
-      font-size: 2.4rem;
+      font-size: 2.1rem;
       color: var(--secondary);
     }
   }
