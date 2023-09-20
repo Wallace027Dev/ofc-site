@@ -85,6 +85,8 @@ export default function Nav() {
       <div className="mobile-menu nav-list">
         <ul>
           <li className="nav-item">
+            <img src={home} alt="home" />
+
             <button
               type="button"
               onClick={() => scrollToSection("about")}

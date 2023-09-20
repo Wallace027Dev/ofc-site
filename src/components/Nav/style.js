@@ -17,12 +17,16 @@ const Container = styled.header`
   .nav-list {
     display: flex;
     align-items: center;
-    margin-right: 1%.5;
+    margin-right: 1.5;
 
     ul {
       display: flex;
       justify-content: center;
       list-style: none;
+
+      img {
+        margin-right: 1rem;
+      }
 
       .nav-item {
         margin: 0 1.5rem;
@@ -47,7 +51,6 @@ const Container = styled.header`
 
         img {
           height: 2rem;
-          margin-right: 0.5rem;
         }
 
         .nav-link {
