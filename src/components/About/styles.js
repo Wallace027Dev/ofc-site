@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const SocialMedias = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 5rem;
+    margin: 0 2rem;
+  }
+`;
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -42,4 +52,4 @@ const Container = styled.div`
   }
 `;
 
-export default Container;
+export default SocialMedias;
