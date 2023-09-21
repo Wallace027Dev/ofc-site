@@ -43,10 +43,12 @@ export default function About() {
           <h1>Sobre a Oficina de Bordados</h1>
           <p>
             Somos líderes em bordados industriais desde 1996, oferecendo
-            soluções de alta qualidade para a indústria têxtil. Com equipe
-            experiente e tecnologia de ponta, atendemos às demandas complexas
-            dos clientes com excelência. Valorizamos a pontualidade e o
-            atendimento, proporcionando um serviço confiável.
+            soluções de alta qualidade para atender a todas as demandas da
+            indústria têxtil. Com uma equipe experiente e tecnologia de ponta,
+            garantimos a excelência no atendimento, valorizando a pontualidade e
+            proporcionando um serviço confiável. Além disso, oferecemos serviços
+            de aplicação e corte a laser para atender às necessidades
+            específicas de nossos clientes.
             <br />
             Bem-vindos à Oficina de Bordados!
           </p>
