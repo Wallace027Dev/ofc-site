@@ -3,6 +3,7 @@ import SocialMedias, { Container } from "./styles";
 import ofcLogo from "../../assets/images/icons/ofcbordados.svg";
 import whatsapp from "../../assets/images/icons/whatsapp-mono.svg";
 import instagram from "../../assets/images/icons/instagram-mono.svg";
+import locationPin from "../../assets/images/icons/locationPin.svg";
 
 export default function About() {
   const phoneNumber = "27997062775";
@@ -29,6 +30,13 @@ export default function About() {
         >
           <img src={whatsapp} alt="Whatsapp Icon" />
         </button>
+        <a
+          className="btn"
+          href="https://goo.gl/maps/jLWHNUaVrdSWDj6V7"
+          target="blank"
+        >
+          <img src={locationPin} alt="Location Pin" />
+        </a>
       </SocialMedias>
       <Container>
         <div className="about" id="about">

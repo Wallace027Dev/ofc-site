@@ -5,9 +5,12 @@ const SocialMedias = styled.div`
   justify-content: center;
   align-items: center;
 
+  button,
+  a {
+    margin: 0 2rem;
+  }
   img {
     height: 5rem;
-    margin: 0 2rem;
   }
 `;
 export const Container = styled.div`
