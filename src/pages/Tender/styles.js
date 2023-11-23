@@ -15,7 +15,11 @@ export const Container = styled.main`
       height: 4rem;
       padding-left: 1rem;
       border-radius: 0.5rem;
-      border: none;
+    }
+    select,
+    input {
+      border: 0.2rem solid var(--tertiary);
+      color: var(--tertiary);
     }
 
     select:not(:first-child),
@@ -27,6 +31,7 @@ export const Container = styled.main`
     button {
       background-color: var(--bt);
       color: var(--bg);
+      border: none;
     }
   }
 `;
