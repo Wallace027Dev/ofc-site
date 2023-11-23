@@ -1,4 +1,4 @@
-import Main, { Header } from "./styles";
+import Main from "./styles";
 
 import Nav from "../../components/Nav";
 import Slider from "../../components/Slider";
