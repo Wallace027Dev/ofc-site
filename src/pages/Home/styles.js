@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const Header = styled.header``;
-
 const Main = styled.main`
   padding: 0 10%;
 
