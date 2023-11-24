@@ -18,6 +18,7 @@ export default function Tender() {
     newTablePreparation,
     newEmbroideryPoints,
     piecesPerRound,
+    pricePerRound,
     roundQuantity
   ) {
     if (embroideryMachine === "8-machine") {
@@ -68,10 +69,13 @@ export default function Tender() {
 
     if (embroideryType === "complete-table") {
       newTablePreparation = 10;
+      pricePerRound = 7;
     } else if (embroideryType === "paper-with-cut") {
       newTablePreparation = 45;
+      pricePerRound = 10;
     } else if (embroideryType === "embroidery-frame") {
       newTablePreparation = 2;
+      pricePerRound = 2;
     } else {
       return console.log("ERROR");
     }
@@ -81,7 +85,8 @@ export default function Tender() {
     const pointsValue = (newEmbroideryPoints / 1000) * embroideryPoints;
     const colorValue = (0.5 * embroideryColors) / piecesQuantity;
     const cutValue = (0.15 * embroideryCuts) / Math.ceil(roundQuantity);
-    const tableExchangeValue = (7 * Math.ceil(roundQuantity)) / piecesQuantity;
+    const tableExchangeValue =
+      (pricePerRound * Math.ceil(roundQuantity)) / piecesQuantity;
 
     const calculatedTender =
       newTablePreparation / piecesQuantity +
@@ -92,7 +97,7 @@ export default function Tender() {
 
     console.log(
       "\nTotal: R$",
-      calculatedTender,
+      calculatedTender.toFixed(2),
       "\nTotal Mínimo: R$",
       calculatedTender < 2 ? 2 : calculatedTender.toFixed(2),
 
