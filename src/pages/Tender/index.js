@@ -18,18 +18,52 @@ export default function Tender() {
     let newTablePreparation;
     let newEmbroideryPoints;
     let piecesPerRound;
+    let roundQuantity;
 
     if (embroideryMachine === "8-machine") {
-      newEmbroideryPoints = 0.55;
+      if (piecesQuantity >= 1 && piecesQuantity <= 12) {
+        newEmbroideryPoints = 1;
+      } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
+        newEmbroideryPoints = 0.75;
+      } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
+        newEmbroideryPoints = 0.65;
+      } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
+        newEmbroideryPoints = 0.55;
+      } else {
+        newEmbroideryPoints = 0.4;
+      }
+
       piecesPerRound = 8;
     } else if (embroideryMachine === "12-machine") {
-      newEmbroideryPoints = 0.55;
+      if (piecesQuantity >= 1 && piecesQuantity <= 12) {
+        newEmbroideryPoints = 1;
+      } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
+        newEmbroideryPoints = 0.75;
+      } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
+        newEmbroideryPoints = 0.65;
+      } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
+        newEmbroideryPoints = 0.55;
+      } else {
+        newEmbroideryPoints = 0.4;
+      }
+
       piecesPerRound = 12;
     } else if (embroideryMachine === "ballerina-machine") {
-      newEmbroideryPoints = 0.9;
+      if (piecesQuantity >= 1 && piecesQuantity <= 12) {
+        newEmbroideryPoints = 1.5;
+      } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
+        newEmbroideryPoints = 1.25;
+      } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
+        newEmbroideryPoints = 1;
+      } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
+        newEmbroideryPoints = 0.8;
+      } else {
+        newEmbroideryPoints = 0.7;
+      }
+
       piecesPerRound = 12;
     } else {
-      return newEmbroideryPoints && piecesPerRound;
+      return console.log("ERROR");
     }
 
     if (embroideryType === "complete-table") {
@@ -39,16 +73,29 @@ export default function Tender() {
     } else if (embroideryType === "embroidery-frame") {
       newTablePreparation = 2;
     } else {
-      return newTablePreparation;
+      return console.log("ERROR");
     }
 
     const calculatedTender =
       newTablePreparation / piecesQuantity +
       (newEmbroideryPoints / 1000) * embroideryPoints +
-      0.5 * (embroideryColors / piecesQuantity) +
-      0.05 * (embroideryCuts / piecesPerRound);
+      (0.5 * embroideryColors) / piecesQuantity +
+      (0.08 * embroideryCuts) /
+        Math.ceil((roundQuantity = piecesQuantity / piecesPerRound));
 
-    console.log("R$", calculatedTender.toFixed(2));
+    console.log(
+      "\nTotal: R$",
+      calculatedTender < 2 ? 2 : calculatedTender.toFixed(2),
+      "\nRodadas:",
+      Math.ceil(roundQuantity),
+      "\nValor de Ponto:",
+      (newEmbroideryPoints / 1000) * embroideryPoints,
+      "\nCorte valor:",
+      (0.08 * embroideryCuts) /
+        Math.ceil((roundQuantity = piecesQuantity / piecesPerRound)),
+      "\nCor Valor:",
+      (0.5 * embroideryColors) / piecesQuantity
+    );
     return calculatedTender.toFixed(2);
   }
 
