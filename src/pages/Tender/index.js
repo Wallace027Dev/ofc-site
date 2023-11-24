@@ -4,6 +4,7 @@ import { Container } from "./styles";
 export default function Tender() {
   const [embroideryMachine, setEmbroideryMachine] = useState("");
   const [embroideryType, setEmbroideryType] = useState("");
+  const [piecesQuantity, setPiecesQuantity] = useState(0);
   const [embroideryPoints, setEmbroideryPoints] = useState(0);
   const [embroideryColors, setEmbroideryColors] = useState(0);
   const [embroideryCuts, setEmbroideryCuts] = useState(0);
@@ -16,15 +17,19 @@ export default function Tender() {
   function HandleCalculateTerder() {
     let newTablePreparation;
     let newEmbroideryPoints;
+    let piecesPerRound;
 
     if (embroideryMachine === "8-machine") {
       newEmbroideryPoints = 0.55;
+      piecesPerRound = 8;
     } else if (embroideryMachine === "12-machine") {
       newEmbroideryPoints = 0.55;
+      piecesPerRound = 12;
     } else if (embroideryMachine === "ballerina-machine") {
       newEmbroideryPoints = 0.9;
+      piecesPerRound = 12;
     } else {
-      return newEmbroideryPoints;
+      return newEmbroideryPoints && piecesPerRound;
     }
 
     if (embroideryType === "complete-table") {
@@ -38,13 +43,13 @@ export default function Tender() {
     }
 
     const calculatedTender =
-      newTablePreparation +
+      newTablePreparation / piecesQuantity +
       (newEmbroideryPoints / 1000) * embroideryPoints +
-      0.5 * embroideryColors +
-      0.05 * embroideryCuts;
+      0.5 * (embroideryColors / piecesQuantity) +
+      0.05 * (embroideryCuts / piecesPerRound);
 
     console.log("R$", calculatedTender.toFixed(2));
-    return newTablePreparation;
+    return calculatedTender.toFixed(2);
   }
 
   return (
@@ -78,6 +83,11 @@ export default function Tender() {
         )}
         {embroideryType && (
           <>
+            <input
+              type="number"
+              onChange={(e) => setPiecesQuantity(parseInt(e.target.value))}
+              placeholder="Número de Peças"
+            />
             <input
               type="number"
               onChange={(e) => setEmbroideryPoints(parseInt(e.target.value))}
