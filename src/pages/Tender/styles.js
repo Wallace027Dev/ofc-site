@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
   form {
-    margin-top: 2rem;
     display: flex;
+    margin-top: 2rem;
     align-items: center;
     flex-direction: column;
 

@@ -8,13 +8,14 @@ export default function Tender() {
   const [embroideryPoints, setEmbroideryPoints] = useState(0);
   const [embroideryColors, setEmbroideryColors] = useState(0);
   const [embroideryCuts, setEmbroideryCuts] = useState(0);
+  const [pricePerPiece, setPricePerPiece] = useState(0);
 
   function handleEmbroideryTypeChange(event) {
     const selectedValue = event.target.value;
     setEmbroideryType(selectedValue);
   }
 
-  function HandleCalculateTerder(
+  function HandleCalculateTender(
     newTablePreparation,
     newEmbroideryPoints,
     piecesPerRound,
@@ -115,7 +116,7 @@ export default function Tender() {
       pricePerRound
     );
 
-    return calculatedTender.toFixed(2);
+    return setPricePerPiece(calculatedTender.toFixed(2));
   }
 
   return (
@@ -177,7 +178,7 @@ export default function Tender() {
           embroideryPoints,
           embroideryColors,
           embroideryCuts ? (
-            <button type="button" onClick={HandleCalculateTerder}>
+            <button type="button" onClick={HandleCalculateTender}>
               Calcular
             </button>
           ) : (
@@ -185,6 +186,7 @@ export default function Tender() {
           ))
         }
       </form>
+      <h1>{pricePerPiece}</h1>
     </Container>
   );
 }
