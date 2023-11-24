@@ -92,6 +92,8 @@ export default function Tender() {
 
     console.log(
       "\nTotal: R$",
+      calculatedTender,
+      "\nTotal Mínimo: R$",
       calculatedTender < 2 ? 2 : calculatedTender.toFixed(2),
 
       "\n\nValor Inicial:",
