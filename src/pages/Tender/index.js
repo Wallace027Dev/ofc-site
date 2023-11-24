@@ -96,15 +96,15 @@ export default function Tender() {
       cutValue;
 
     console.log(
-      "\nTotal: R$",
+      "\nTotal Real: R$",
       calculatedTender.toFixed(2),
       "\nTotal Mínimo: R$",
       calculatedTender < 2 ? 2 : calculatedTender.toFixed(2),
 
+      "\nNúmero de Rodadas:",
+      Math.ceil(roundQuantity),
       "\n\nValor Inicial:",
       newTablePreparation,
-      "\nRodadas:",
-      Math.ceil(roundQuantity),
       "\nValor de Ponto:",
       pointsValue,
       "\nCor Valor:",
@@ -112,7 +112,7 @@ export default function Tender() {
       "\nCorte valor:",
       cutValue,
       "\nTrocas valor:",
-      tableExchangeValue
+      pricePerRound
     );
 
     return calculatedTender.toFixed(2);
