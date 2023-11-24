@@ -80,7 +80,7 @@ export default function Tender() {
       newTablePreparation / piecesQuantity +
       (newEmbroideryPoints / 1000) * embroideryPoints +
       (0.5 * embroideryColors) / piecesQuantity +
-      (0.08 * embroideryCuts) /
+      (0.15 * embroideryCuts) /
         Math.ceil((roundQuantity = piecesQuantity / piecesPerRound));
 
     console.log(
@@ -91,8 +91,7 @@ export default function Tender() {
       "\nValor de Ponto:",
       (newEmbroideryPoints / 1000) * embroideryPoints,
       "\nCorte valor:",
-      (0.08 * embroideryCuts) /
-        Math.ceil((roundQuantity = piecesQuantity / piecesPerRound)),
+      (0.15 * embroideryCuts) / Math.ceil(roundQuantity),
       "\nCor Valor:",
       (0.5 * embroideryColors) / piecesQuantity
     );
