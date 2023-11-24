@@ -96,7 +96,7 @@ export default function Tender() {
 
       "\n\nValor Inicial:",
       newTablePreparation,
-      "\n\nRodadas:",
+      "\nRodadas:",
       Math.ceil(roundQuantity),
       "\nValor de Ponto:",
       pointsValue,
