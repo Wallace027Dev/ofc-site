@@ -14,12 +14,12 @@ export default function Tender() {
     setEmbroideryType(selectedValue);
   }
 
-  function HandleCalculateTerder() {
-    let newTablePreparation;
-    let newEmbroideryPoints;
-    let piecesPerRound;
-    let roundQuantity;
-
+  function HandleCalculateTerder(
+    newTablePreparation,
+    newEmbroideryPoints,
+    piecesPerRound,
+    roundQuantity
+  ) {
     if (embroideryMachine === "8-machine") {
       if (piecesQuantity >= 1 && piecesQuantity <= 12) {
         newEmbroideryPoints = 1;
@@ -76,25 +76,38 @@ export default function Tender() {
       return console.log("ERROR");
     }
 
+    roundQuantity = piecesQuantity / piecesPerRound;
+
+    const pointsValue = (newEmbroideryPoints / 1000) * embroideryPoints;
+    const colorValue = (0.5 * embroideryColors) / piecesQuantity;
+    const cutValue = (0.15 * embroideryCuts) / Math.ceil(roundQuantity);
+    const tableExchangeValue = (7 * Math.ceil(roundQuantity)) / piecesQuantity;
+
     const calculatedTender =
       newTablePreparation / piecesQuantity +
-      (newEmbroideryPoints / 1000) * embroideryPoints +
-      (0.5 * embroideryColors) / piecesQuantity +
-      (0.15 * embroideryCuts) /
-        Math.ceil((roundQuantity = piecesQuantity / piecesPerRound));
+      pointsValue +
+      colorValue +
+      tableExchangeValue +
+      cutValue;
 
     console.log(
       "\nTotal: R$",
       calculatedTender < 2 ? 2 : calculatedTender.toFixed(2),
-      "\nRodadas:",
+
+      "\n\nValor Inicial:",
+      newTablePreparation,
+      "\n\nRodadas:",
       Math.ceil(roundQuantity),
       "\nValor de Ponto:",
-      (newEmbroideryPoints / 1000) * embroideryPoints,
-      "\nCorte valor:",
-      (0.15 * embroideryCuts) / Math.ceil(roundQuantity),
+      pointsValue,
       "\nCor Valor:",
-      (0.5 * embroideryColors) / piecesQuantity
+      colorValue,
+      "\nCorte valor:",
+      cutValue,
+      "\nTrocas valor:",
+      tableExchangeValue
     );
+
     return calculatedTender.toFixed(2);
   }
 
