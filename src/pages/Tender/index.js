@@ -1,24 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Container } from "./styles";
 
 export default function Tender() {
+  const [embroideryMachine, setEmbroideryMachine] = useState("");
   const [embroideryType, setEmbroideryType] = useState("");
-  const [tablePreparation, setTablePreparation] = useState(0);
   const [embroideryPoints, setEmbroideryPoints] = useState(0);
   const [embroideryColors, setEmbroideryColors] = useState(0);
   const [embroideryCuts, setEmbroideryCuts] = useState(0);
-
-  useEffect(() => {
-    if (embroideryType === "complete-table") {
-      setTablePreparation(10);
-    } else if (embroideryType === "paper-with-cut") {
-      setTablePreparation(45);
-    } else if (embroideryType === "embroidery-frame") {
-      setTablePreparation(2);
-    } else {
-      return;
-    }
-  }, [embroideryType]);
 
   function handleEmbroideryTypeChange(event) {
     const selectedValue = event.target.value;
@@ -26,37 +14,68 @@ export default function Tender() {
   }
 
   function HandleCalculateTerder() {
+    let newTablePreparation;
+    let newEmbroideryPoints;
+
+    if (embroideryMachine === "8-machine") {
+      newEmbroideryPoints = 0.55;
+    } else if (embroideryMachine === "12-machine") {
+      newEmbroideryPoints = 0.55;
+    } else if (embroideryMachine === "ballerina-machine") {
+      newEmbroideryPoints = 0.9;
+    } else {
+      return newEmbroideryPoints;
+    }
+
+    if (embroideryType === "complete-table") {
+      newTablePreparation = 10;
+    } else if (embroideryType === "paper-with-cut") {
+      newTablePreparation = 45;
+    } else if (embroideryType === "embroidery-frame") {
+      newTablePreparation = 2;
+    } else {
+      return newTablePreparation;
+    }
+
     const calculatedTender =
-      tablePreparation +
-      (0.55 / 1000) * embroideryPoints +
+      newTablePreparation +
+      (newEmbroideryPoints / 1000) * embroideryPoints +
       0.5 * embroideryColors +
       0.05 * embroideryCuts;
 
-    console.log(
-      tablePreparation,
-      embroideryPoints,
-      embroideryColors,
-      embroideryCuts
-    );
-
-    console.log(calculatedTender);
+    console.log("R$", calculatedTender.toFixed(2));
+    return newTablePreparation;
   }
 
   return (
     <Container>
       <form>
         <select
-          name="Tipo de Bordado"
-          value={embroideryType}
-          onChange={handleEmbroideryTypeChange}
+          name="Embroidery Machine"
+          value={embroideryMachine}
+          onChange={(e) => setEmbroideryMachine(e.target.value)}
         >
           <option value="" disabled>
-            Tipo de Bordado
+            Máquina de Bordado
           </option>
-          <option value="complete-table">Mesa Completa</option>
-          <option value="paper-with-cut">Papel com Corte</option>
-          <option value="embroidery-frame">Bastidor</option>
+          <option value="8-machine">Máquina de 8</option>
+          <option value="12-machine">Máquina de 12</option>
+          <option value="ballerina-machine">Bailarina</option>
         </select>
+        {embroideryMachine && (
+          <select
+            name="Embroidery Type"
+            value={embroideryType}
+            onChange={handleEmbroideryTypeChange}
+          >
+            <option value="" disabled>
+              Tipo de Bordado
+            </option>
+            <option value="complete-table">Mesa Completa</option>
+            <option value="paper-with-cut">Papel com Corte</option>
+            <option value="embroidery-frame">Bastidor</option>
+          </select>
+        )}
         {embroideryType && (
           <>
             <input
@@ -76,11 +95,19 @@ export default function Tender() {
             />
           </>
         )}
-        {embroideryType !== "" && (
-          <button type="button" onClick={HandleCalculateTerder}>
-            Calcular
-          </button>
-        )}
+        {
+          (embroideryType,
+          embroideryMachine,
+          embroideryPoints,
+          embroideryColors,
+          embroideryCuts ? (
+            <button type="button" onClick={HandleCalculateTerder}>
+              Calcular
+            </button>
+          ) : (
+            ""
+          ))
+        }
       </form>
     </Container>
   );
