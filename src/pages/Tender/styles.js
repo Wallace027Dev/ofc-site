@@ -12,6 +12,14 @@ export const Container = styled.main`
     align-items: center;
     flex-direction: column;
 
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--bt);
+    }
+
     select,
     input,
     button {
@@ -27,16 +35,19 @@ export const Container = styled.main`
       color: var(--tertiary);
     }
 
-    select:not(:first-child),
-    input,
+    label:not(:first-child),
     button {
-      margin-top: 1rem;
+      margin-top: 0.75rem;
     }
 
     button {
       background-color: var(--bt);
       color: var(--bg);
       border: none;
+    }
+
+    button:disabled {
+      background-color: var(--primary);
     }
   }
 `;

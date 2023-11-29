@@ -8,7 +8,39 @@ export default function Tender() {
   const [embroideryPoints, setEmbroideryPoints] = useState(0);
   const [embroideryColors, setEmbroideryColors] = useState(0);
   const [embroideryCuts, setEmbroideryCuts] = useState(0);
-  const [pricePerPiece, setPricePerPiece] = useState("Calcule!");
+  const [pricePerPiece, setPricePerPiece] = useState("");
+  const isFormValid =
+    isValidValue(piecesQuantity) &&
+    typeof piecesQuantity === "number" &&
+    isValidValue(embroideryPoints) &&
+    typeof embroideryPoints === "number" &&
+    isValidValue(embroideryColors) &&
+    typeof embroideryColors === "number" &&
+    isValidValue(embroideryCuts) &&
+    typeof embroideryCuts === "number";
+
+  function isValidValue(value) {
+    return (
+      (typeof value === "number" ||
+        (typeof value === "string" &&
+          value.trim() !== "" &&
+          !isNaN(Number(value.trim())))) &&
+      value !== 0 &&
+      value !== null &&
+      value !== undefined
+    );
+  }
+
+  function formatNumber(value) {
+    const cleanedValue = value.replace(/\./g, "");
+    const numberValue = parseInt(cleanedValue, 10);
+
+    if (!isNaN(numberValue)) {
+      return numberValue;
+    } else {
+      return value;
+    }
+  }
 
   function handleEmbroideryTypeChange(event) {
     const selectedValue = event.target.value;
@@ -155,91 +187,90 @@ export default function Tender() {
       tableExchangeValue +
       cutValue;
 
-    console.log("\nTotal Real: R$", calculatedTender.toFixed(2));
-    console.log(
-      "Total Mínimo: R$",
+    return setPricePerPiece(
       calculatedTender < 2 ? 2 : calculatedTender.toFixed(2)
     );
-
-    console.log("\nNúmero de Rodadas:", Math.ceil(roundQuantity), "\n");
-
-    console.log("Valor Inicial:", newTablePreparation);
-    console.log("Valor de Ponto:", pointsValue);
-    console.log("Cor Valor:", colorValue);
-    console.log("Corte valor:", cutValue);
-    console.log("Trocas valor:", pricePerRound);
-
-    return setPricePerPiece(calculatedTender.toFixed(2));
   }
 
   return (
     <Container>
       <form>
-        <select
-          name="Embroidery Machine"
-          value={embroideryMachine}
-          onChange={(e) => setEmbroideryMachine(e.target.value)}
-        >
-          <option value="" disabled>
-            Máquina de Bordado
-          </option>
-          <option value="8-machine">Máquina de 8</option>
-          <option value="12-machine">Máquina de 12</option>
-          <option value="ballerina-machine">Bailarina</option>
-        </select>
-        {embroideryMachine && (
+        <label htmlFor="Embroidery Machine">
+          Máquina de Bordado
           <select
-            name="Embroidery Type"
-            value={embroideryType}
-            onChange={handleEmbroideryTypeChange}
+            name="Embroidery Machine"
+            value={embroideryMachine}
+            onChange={(e) => setEmbroideryMachine(e.target.value)}
           >
             <option value="" disabled>
-              Tipo de Bordado
+              Onde vai bordar?
             </option>
-            <option value="complete-table">Mesa Completa</option>
-            <option value="paper-with-cut">Papel com Corte</option>
-            <option value="embroidery-frame">Bastidor</option>
+            <option value="8-machine">Máquina de 8</option>
+            <option value="12-machine">Máquina de 12</option>
+            <option value="ballerina-machine">Bailarina</option>
           </select>
+        </label>
+        {embroideryMachine && (
+          <label htmlFor="Embroidery Type">
+            Tipo de Bordado
+            <select
+              name="Embroidery Type"
+              value={embroideryType}
+              onChange={handleEmbroideryTypeChange}
+            >
+              <option value="" disabled>
+                Qual método?
+              </option>
+              <option value="complete-table">
+                Mesa de entretela ou plástico
+              </option>
+              <option value="paper-with-cut">Papel com Corte</option>
+              <option value="embroidery-frame">Bastidor</option>
+            </select>
+          </label>
         )}
         {embroideryType && (
-          <>
+          <label>
+            Especificações do bordado
+            <span>Número de Peças</span>
             <input
               type="number"
-              onChange={(e) => setPiecesQuantity(parseInt(e.target.value))}
-              placeholder="Número de Peças"
+              value={piecesQuantity.toLocaleString("pt-BR")}
+              onChange={(e) => setPiecesQuantity(formatNumber(e.target.value))}
             />
+            <span>Número de Pontos</span>
             <input
               type="number"
-              onChange={(e) => setEmbroideryPoints(parseInt(e.target.value))}
-              placeholder="Número de Pontos"
+              value={embroideryPoints.toLocaleString("pt-BR")}
+              onChange={(e) =>
+                setEmbroideryPoints(formatNumber(e.target.value))
+              }
             />
+            <span>Número de Cores</span>
             <input
               type="number"
-              onChange={(e) => setEmbroideryColors(parseInt(e.target.value))}
-              placeholder="Número de Cores"
+              value={embroideryColors.toLocaleString("pt-BR")}
+              onChange={(e) =>
+                setEmbroideryColors(formatNumber(e.target.value))
+              }
             />
+            <span>Número de Cortes</span>
             <input
               type="number"
-              onChange={(e) => setEmbroideryCuts(parseInt(e.target.value))}
-              placeholder="Número de Cortes"
+              value={embroideryCuts.toLocaleString("pt-BR")}
+              onChange={(e) => setEmbroideryCuts(formatNumber(e.target.value))}
             />
-          </>
+          </label>
         )}
-        {
-          (embroideryType,
-          embroideryMachine,
-          embroideryPoints,
-          embroideryColors,
-          embroideryCuts ? (
-            <button type="button" onClick={HandleCalculateTender}>
-              Calcular
-            </button>
-          ) : (
-            ""
-          ))
-        }
+        <button
+          disabled={!isFormValid}
+          type="button"
+          onClick={HandleCalculateTender}
+        >
+          Calcular
+        </button>
       </form>
-      <h1>{pricePerPiece}</h1>
+      {isFormValid && <h1>R${pricePerPiece}</h1>}
     </Container>
   );
 }
