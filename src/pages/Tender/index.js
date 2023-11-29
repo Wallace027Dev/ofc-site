@@ -22,55 +22,72 @@ export default function Tender() {
     pricePerRound,
     roundQuantity
   ) {
-    if (embroideryMachine === "8-machine") {
-      if (piecesQuantity >= 1 && piecesQuantity <= 12) {
-        newEmbroideryPoints = 1;
-      } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
-        newEmbroideryPoints = 0.75;
-      } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
-        newEmbroideryPoints = 0.65;
-      } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
-        newEmbroideryPoints = 0.55;
-      } else {
-        newEmbroideryPoints = 0.4;
-      }
+    switch (embroideryMachine) {
+      case "8-machine":
+        switch (true) {
+          case piecesQuantity >= 1 && piecesQuantity <= 12:
+            newEmbroideryPoints = 1;
+            break;
+          case piecesQuantity >= 13 && piecesQuantity <= 24:
+            newEmbroideryPoints = 0.75;
+            break;
+          case piecesQuantity >= 25 && piecesQuantity <= 36:
+            newEmbroideryPoints = 0.65;
+            break;
+          case piecesQuantity >= 36 && piecesQuantity <= 120:
+            newEmbroideryPoints = 0.55;
+            break;
+          default:
+            newEmbroideryPoints = 0.4;
+        }
+        piecesPerRound = 8;
+        break;
 
-      piecesPerRound = 8;
-    } else if (embroideryMachine === "12-machine") {
-      if (piecesQuantity >= 1 && piecesQuantity <= 12) {
-        newEmbroideryPoints = 1;
-      } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
-        newEmbroideryPoints = 0.75;
-      } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
-        newEmbroideryPoints = 0.65;
-      } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
-        newEmbroideryPoints = 0.55;
-      } else {
-        newEmbroideryPoints = 0.4;
-      }
+      case "12-machine":
+        switch (true) {
+          case piecesQuantity >= 1 && piecesQuantity <= 12:
+            newEmbroideryPoints = 1;
+            break;
+          case piecesQuantity >= 13 && piecesQuantity <= 24:
+            newEmbroideryPoints = 0.75;
+            break;
+          case piecesQuantity >= 25 && piecesQuantity <= 36:
+            newEmbroideryPoints = 0.65;
+            break;
+          case piecesQuantity >= 36 && piecesQuantity <= 120:
+            newEmbroideryPoints = 0.55;
+            break;
+          default:
+            newEmbroideryPoints = 0.4;
+        }
+        piecesPerRound = 12;
+        break;
 
-      piecesPerRound = 12;
-    } else if (embroideryMachine === "ballerina-machine") {
-      if (piecesQuantity >= 1 && piecesQuantity <= 12) {
-        newEmbroideryPoints = 1.5;
-      } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
-        newEmbroideryPoints = 1.2;
-      } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
-        newEmbroideryPoints = 1;
-      } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
-        newEmbroideryPoints = 0.8;
-      } else {
-        newEmbroideryPoints = 0.7;
-      }
+      case "ballerina-machine":
+        switch (true) {
+          case piecesQuantity >= 1 && piecesQuantity <= 12:
+            newEmbroideryPoints = 1.5;
+            break;
+          case piecesQuantity >= 13 && piecesQuantity <= 24:
+            newEmbroideryPoints = 1.2;
+            break;
+          case piecesQuantity >= 25 && piecesQuantity <= 36:
+            newEmbroideryPoints = 1;
+            break;
+          case piecesQuantity >= 36 && piecesQuantity <= 120:
+            newEmbroideryPoints = 0.8;
+            break;
+          default:
+            newEmbroideryPoints = 0.7;
+        }
+        piecesPerRound = 12;
+        break;
 
-      piecesPerRound = 12;
-    } else {
-      return console.log("ERROR");
+      default:
+        console.log("ERROR");
     }
 
-    console.log("antes", newEmbroideryPoints);
-
-    switch (embroideryMachine) {
+    switch (embroideryPoints) {
       case embroideryPoints >= 1 && embroideryPoints <= 99999:
         newEmbroideryPoints *= 1;
         break;
@@ -103,19 +120,24 @@ export default function Tender() {
         newEmbroideryPoints *= 0.55;
     }
 
-    console.log("depois", newEmbroideryPoints);
+    switch (embroideryType) {
+      case "complete-table":
+        newTablePreparation = 10;
+        pricePerRound = 7;
+        break;
 
-    if (embroideryType === "complete-table") {
-      newTablePreparation = 10;
-      pricePerRound = 7;
-    } else if (embroideryType === "paper-with-cut") {
-      newTablePreparation = 45;
-      pricePerRound = 10;
-    } else if (embroideryType === "embroidery-frame") {
-      newTablePreparation = 2;
-      pricePerRound = 2;
-    } else {
-      return console.log("ERROR");
+      case "paper-with-cut":
+        newTablePreparation = 45;
+        pricePerRound = 10;
+        break;
+
+      case "embroidery-frame":
+        newTablePreparation = 2;
+        pricePerRound = 2;
+        break;
+
+      default:
+        console.log("ERROR");
     }
 
     roundQuantity = piecesQuantity / piecesPerRound;
