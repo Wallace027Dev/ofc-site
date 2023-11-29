@@ -95,13 +95,13 @@ export default function Tender() {
         break;
       case "ballerina-machine":
         switch (true) {
-          case piecesQuantity >= 1 && piecesQuantity <= 12:
+          case piecesQuantity >= 1 && piecesQuantity <= 11:
             newEmbroideryPoints = 1.2;
             break;
-          case piecesQuantity >= 13 && piecesQuantity <= 24:
+          case piecesQuantity >= 12 && piecesQuantity <= 23:
             newEmbroideryPoints = 1;
             break;
-          case piecesQuantity >= 25 && piecesQuantity <= 36:
+          case piecesQuantity >= 24 && piecesQuantity <= 35:
             newEmbroideryPoints = 0.9;
             break;
           case piecesQuantity >= 36 && piecesQuantity <= 120:
