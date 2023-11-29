@@ -8,7 +8,7 @@ export default function Tender() {
   const [embroideryPoints, setEmbroideryPoints] = useState(0);
   const [embroideryColors, setEmbroideryColors] = useState(0);
   const [embroideryCuts, setEmbroideryCuts] = useState(0);
-  const [pricePerPiece, setPricePerPiece] = useState(0);
+  const [pricePerPiece, setPricePerPiece] = useState("Calcule!");
 
   function handleEmbroideryTypeChange(event) {
     const selectedValue = event.target.value;
@@ -54,7 +54,7 @@ export default function Tender() {
       if (piecesQuantity >= 1 && piecesQuantity <= 12) {
         newEmbroideryPoints = 1.5;
       } else if (piecesQuantity >= 13 && piecesQuantity <= 24) {
-        newEmbroideryPoints = 1.25;
+        newEmbroideryPoints = 1.2;
       } else if (piecesQuantity >= 25 && piecesQuantity <= 36) {
         newEmbroideryPoints = 1;
       } else if (piecesQuantity >= 36 && piecesQuantity <= 120) {
@@ -67,6 +67,43 @@ export default function Tender() {
     } else {
       return console.log("ERROR");
     }
+
+    console.log("antes", newEmbroideryPoints);
+
+    switch (embroideryMachine) {
+      case embroideryPoints >= 1 && embroideryPoints <= 99999:
+        newEmbroideryPoints *= 1;
+        break;
+      case embroideryPoints <= 14999:
+        newEmbroideryPoints *= 0.95;
+        break;
+      case embroideryPoints <= 29999:
+        newEmbroideryPoints *= 0.9;
+        break;
+      case embroideryPoints <= 49999:
+        newEmbroideryPoints *= 0.85;
+        break;
+      case embroideryPoints <= 79999:
+        newEmbroideryPoints *= 0.8;
+        break;
+      case embroideryPoints <= 99999:
+        newEmbroideryPoints *= 0.75;
+        console.log("Olá mundo", newEmbroideryPoints);
+        break;
+      case embroideryPoints <= 124999:
+        newEmbroideryPoints *= 0.7;
+        break;
+      case embroideryPoints <= 149999:
+        newEmbroideryPoints *= 0.65;
+        break;
+      case embroideryPoints <= 199999:
+        newEmbroideryPoints *= 0.6;
+        break;
+      default:
+        newEmbroideryPoints *= 0.55;
+    }
+
+    console.log("depois", newEmbroideryPoints);
 
     if (embroideryType === "complete-table") {
       newTablePreparation = 10;
@@ -96,25 +133,19 @@ export default function Tender() {
       tableExchangeValue +
       cutValue;
 
+    console.log("\nTotal Real: R$", calculatedTender.toFixed(2));
     console.log(
-      "\nTotal Real: R$",
-      calculatedTender.toFixed(2),
-      "\nTotal Mínimo: R$",
-      calculatedTender < 2 ? 2 : calculatedTender.toFixed(2),
-
-      "\nNúmero de Rodadas:",
-      Math.ceil(roundQuantity),
-      "\n\nValor Inicial:",
-      newTablePreparation,
-      "\nValor de Ponto:",
-      pointsValue,
-      "\nCor Valor:",
-      colorValue,
-      "\nCorte valor:",
-      cutValue,
-      "\nTrocas valor:",
-      pricePerRound
+      "Total Mínimo: R$",
+      calculatedTender < 2 ? 2 : calculatedTender.toFixed(2)
     );
+
+    console.log("\nNúmero de Rodadas:", Math.ceil(roundQuantity), "\n");
+
+    console.log("Valor Inicial:", newTablePreparation);
+    console.log("Valor de Ponto:", pointsValue);
+    console.log("Cor Valor:", colorValue);
+    console.log("Corte valor:", cutValue);
+    console.log("Trocas valor:", pricePerRound);
 
     return setPricePerPiece(calculatedTender.toFixed(2));
   }
