@@ -28,7 +28,7 @@ export const Form = styled.form`
   select,
   textarea,
   option {
-    padding: 0.25rem;
+    padding: 0 0.5rem;
     border: 1px solid var(--tertiary);
     border-radius: 0.25rem;
     font-size: 1.2rem;
