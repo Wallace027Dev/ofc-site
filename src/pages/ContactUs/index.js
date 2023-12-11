@@ -9,22 +9,9 @@ export default function ContactUs() {
   const [piecesQuantity, setPiecesQuantity] = useState("");
   const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
-  const [photoFile, setPhotoFile] = useState("");
-
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    setPhotoFile(selectedFile);
-  };
 
   function sendEmail(e) {
     e.preventDefault();
-
-    if (
-      !(name && telNumber && email && piecesQuantity && location && photoFile)
-    ) {
-      alert("Preencha todos os campos obrigatórios");
-      return;
-    }
 
     const formData = new FormData();
     formData.append("from_name", name);
@@ -33,11 +20,6 @@ export default function ContactUs() {
     formData.append("location", location);
     formData.append("pieces_quantity", piecesQuantity);
     formData.append("message", message);
-
-    // Adicionar o arquivo ao FormData
-    if (photoFile) {
-      formData.append("photo_file", photoFile);
-    }
 
     emailjs
       .sendForm(
@@ -55,7 +37,6 @@ export default function ContactUs() {
           setPiecesQuantity("");
           setLocation("");
           setMessage("");
-          setPhotoFile("");
         },
         (error) => {
           console.log("ERROR:", error);
@@ -115,6 +96,7 @@ export default function ContactUs() {
             setLocation(e.target.options[e.target.selectedIndex].text)
           }
           value={location || ""}
+          defaultValue="Peito Padrão"
         >
           <option value="Peito Esquerdo">Peito Esquerdo</option>
           <option value=">Peito Direito">Peito Direito</option>
@@ -123,14 +105,6 @@ export default function ContactUs() {
           <option value="Perna de Bermuda">Perna de Bermuda</option>
           <option value="Outras opções">Outras opções</option>
         </select>
-
-        <label htmlFor="my_file">Sua logomarca *</label>
-        <input
-          type="file"
-          name="my_file"
-          id="my_file"
-          onChange={handleFileChange}
-        />
 
         <label htmlFor="fmessage">Descreva mais sobre seu bordado</label>
         <textarea
